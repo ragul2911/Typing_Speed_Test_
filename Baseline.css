@@ -1,0 +1,128 @@
+body{
+    background-color: black;
+    /* position:static;  */
+    color: white;
+    padding: 0px 45px 0px 45px;
+      font-family: "Sora", sans-serif;
+}
+.title{
+    display:flex;
+    align-items: center;
+}
+#wpm1{
+    display: flex;
+    margin-left: auto;
+    gap:5px;
+}
+
+.circle1{
+    display: flex;
+    width:120px;
+    height:120px;
+    border-radius: 60px;
+    background-color: rgb(1, 36, 1);
+    align-items: center;
+    justify-content: center;
+}
+.circle2{
+    display: flex;
+    width: 90px;
+    height: 90px;
+    border-radius: 50px;
+    background-color: rgb(9, 71, 9);
+    align-items: center;
+    justify-content: center;
+}
+.tick{
+    position:relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0px 20px 0px;
+}
+h1{
+    margin-bottom: 5px;
+}
+.complete{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+h5{
+    color:grey;
+    margin-top:0px;
+    margin-bottom: 30px;
+}
+.data{
+    display: flex;
+    gap:10px;
+    justify-content: center;
+}
+.box1{
+    display: flex;
+    flex-direction: column;
+    height:70px;
+    width:120px;
+    background-color: black;
+    color:gray;
+    border-style: double;
+    border-color: rgb(48, 47, 47);
+    border-radius: 5px;
+    padding: 15px 0px 0px 15px;
+    font-size:medium;
+}
+#wpm4{
+    font-size:20px;
+    font-weight: 600;
+    color:white;
+}
+#output{
+    font-size: 20px;
+    font-weight: 700;
+    color:rgb(171, 51, 51)
+}
+#output1{
+    font-size: 20px;
+    font-weight: 700;
+    color:rgb(69, 139, 69)
+}
+#tot{
+    font-size: 20px;
+    font-weight: 700;
+    color:rgb(171, 51, 51)
+}
+.restart{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    height:30px;
+}
+button.restrt{
+    display:flex;
+    flex-direction:row;
+    position: relative;
+    color:black;
+    width:150px ;
+    height: 38px;
+    gap:5px;
+    font-weight: 545px;
+    font-size: 15px;
+    margin: 40px 0px 0px 0px;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 0px 5px 4px;
+    border-radius:7px;
+    
+}
+.flower{
+    width:20px;
+    position:absolute;
+    top: 200px;
+    left:60px;
+}
+.star{
+    width:40px;
+    position:absolute;
+    right:60px;
+    top:400px;
+}
