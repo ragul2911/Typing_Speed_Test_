@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+       <div class="title">
+         <img src="../img/logo-small.svg" alt="">
+        <div id="wpm1">
+            <img src="../img/icon-personal-best.svg" alt="">
+            <h4 class="best1">Best: </h4>
+            <h4><span id="wpm2">0</span></h4>
+            <h4>wpm</h4>
+        </div>
+       </div> 
+       <nav>
+            <div class="data1">
+                <div class="res" id="wpm5">
+                    <h5 class="tit">WPM:</h5>
+                    <h5><span id="wpm3">0</span></h5>
+                </div>
+                <div class="res" id="acc">
+                    <h5 class="tit">Accuracy:</h5>
+                    <h5><span id="accuracy">100%</span></h5>
+                </div>
+                <div class="res">
+                    <h5 class="tit">Time:</h5>
+                    <h5><span id="time">0:60</span><span id="time">s</span></h5>
+                </div>
+            </div>
+        <div class="sel">
+        <div class="dropdown">
+            <button class="dropdown-btn">difficulty</button>
+            <div class="dropdown-content">
+                <label>
+                    <input type="radio" value="easy" name="difficulty" id="easy-btn">easy
+                </label>
+                <label>
+                    <input type="radio" value="medium" name="difficulty" id="medium-btn">medium
+                </label>
+                <label>
+                    <input type="radio" value="hard" name="difficulty" id="hard-btn">hard
+                </label>
+            </div>
+            <div id="char"></div>
+        </div>
+        <div class="dropdown-2">
+            <button class="dropdown-btn-2">mode</button>
+            <div class="dropdown-content2">
+                <label>
+                    <input type="radio" name="mode" value="Timed" id="timed-btn">Timed(60s)
+                </label>
+                <label>
+                    <input type="radio" name="mode" value="passage" id="passage-btn">Passage
+                </label>
+            </div>
+        </div>
+        </div>
+       </nav>
+       <div id="char"></div>
+    </header>
+    <main>
+        <section class="typing-area">
+            <div class="overlay" id="overlay">
+                <button class="type" id="btn1">start Typing Test</button>
+                <p>Or click the text and start typing</p>
+            </div>
+            <div class="passage" id="">
+                <p id="paragraph"></p>
+                <input type="text" id="typing-input" autocomplete="off" spellcheck="false" autofocus >
+            </div>
+        </section>
+        
+    </main><br>
+    <footer class="attribution">
+        <button class="refresh" id="refresh">Restart Test
+            <img src="../img/icon-restart.svg" width="13px" alt="">
+        </button>
+        <div>Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+        Coded by <a href="#">K RAGUL</a>.</div>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>

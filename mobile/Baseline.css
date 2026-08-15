@@ -1,0 +1,149 @@
+body{
+    background-color: black;
+    color: white;
+    padding: 0px 15px 0px 15px;
+    font-family: "Sora", sans-serif;
+}
+.title{
+    display:flex;
+    position: relative;
+    right:10px;
+    bottom: 12px;
+    width: 375px;
+    align-items: center;
+}
+#wpm1{
+    display: flex;
+    margin-left: 180px ;
+    gap:5px;
+}
+.tick{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px 0px 0px;
+}
+.circle1{
+    display: flex;
+    position:static;
+    width:65px;
+    height:65px;
+    border-radius: 60px;
+    background-color: rgb(1, 36, 1);
+    align-items: center;
+    justify-content: center;
+}
+.circle2{
+    display: flex;
+    position:static;
+    width: 55px;
+    height: 55px;
+    border-radius: 50px;
+    background-color: rgb(9, 71, 9);
+    align-items: center;
+    justify-content: center;
+}
+.complete{
+    display:flex;
+    width:350px ;
+    height: 100px;
+    flex-direction: column;
+    gap:10px;
+    align-items: center; 
+    margin: 10px 0px 10px 0px;
+}
+#complete{
+    display:flex;
+    font-size: 25px;
+}
+#caption{
+    display: flex;
+    color:grey;
+    width:350px;
+    text-align: center;
+    margin: 0px 6px 0px 6px;
+}
+
+.data{
+    display: block;
+    justify-content: center;
+    margin: 0px 0px 30px 0px;
+}
+.box1{
+    display: flex;
+    flex-direction: column;
+    height:60px;
+    width:120px auto;
+    margin : 0px 0px 10px 0px;
+    background-color: black;
+    color:gray;
+    border-style: double;
+    border:2px solid rgb(48, 47, 47);
+    border-radius: 5px;
+    padding: 10px 0px 0px 10px;
+    font-size:medium;
+}
+#wpm4{
+    font-size:17px;
+    font-weight: 500;
+    color:white;
+
+}
+#wpm5{
+    color:white;
+    font-weight: 600;
+    font-size: 23px;
+}
+#output{
+    font-size: 20px;
+    font-weight: 700;
+    color:rgb(171, 51, 51)
+}
+#output1{
+    font-size: 20px;
+    font-weight: 700;
+    color:rgb(69, 139, 69)
+}
+#tot{
+    font-size: 20px;
+    font-weight: 700;
+    color:rgb(171, 51, 51)
+}
+.tot{
+    display: flex;
+    flex-direction: row;
+}
+.restart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:30px;
+}
+button.restrt{
+    display:flex;
+    flex-direction:row;
+    color:black;
+    font-weight: 550;
+    font-size: 20px;
+    width:190px;
+    height: 38px;
+    padding: 2px 2px 2px 2px;
+    border-radius:7px;
+    margin: 20px 0px 0px 0px;
+    justify-content: center;
+    align-items: center;
+    gap:4px;
+}
+.flower{
+    width:20px;
+    position:absolute;
+    top: 120px;
+    left:40px;
+}
+.star{
+    width:40px;
+    position:absolute;
+    right:60px;
+    top:630px;
+}
+

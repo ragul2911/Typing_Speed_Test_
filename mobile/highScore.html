@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="highScore.css">
+    <title>Document</title>
+</head>
+<body>
+      <header>
+       <div class="title">
+         <img src="../img/logo-small.svg" alt="">
+        <div id="wpm1">
+            <img src="../img/icon-personal-best.svg" alt="">
+            <h4 class="best1">best: </h4>
+            <h4><span id="wpm4">0</span></h4>
+            <h4>wpm</h4>
+        </div>
+       </div> 
+       <div class="tick">
+            <img src="../img/icon-new-pb.svg" alt="">
+       </div>
+    <div Class="complete">
+        <div id="complete">High Score Smahed!</div>
+        <div id="caption">You're getting faster.That was incredible typing.</div>
+        <h1></h1>
+        <h5></h5>
+    </div>
+    <div class="data">
+        <div class="box1">WPM: <span id="wpm5"></span></div>
+        <div class="box1">Accuracy:  <span id="output"></span></div>
+        <div class="box1">Characters: 
+            <div>
+             <span id="output1"></span>
+             <span id="tot">/5</span>
+            </div>
+        </div>
+    </div>
+    <div class="restart"><button class="restrt" id="restrt">Beat this score
+        <div class="icon"><img src="../img/restart-icon-32271.jpg" width="20px" alt=""></div>
+    </button></div>
+    <div class="party"> <img src="../img/pattern-confetti.svg" width="575px" alt=""></div>
+      
+        <script src="highScore.js"></script>
+</body>
+</html>
