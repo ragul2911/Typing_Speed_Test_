@@ -21,8 +21,8 @@ function checkScreenWidth() {
             window.location.href = "index.html";
         }
     } else {
-        if (!window.location.pathname.endsWith("../desktop/index.html")) {
-            window.location.href = "../desktop/index.html";
+        if (!window.location.pathname.endsWith("../index.html")) {
+            window.location.href = "../index.html";
         }
     }
 }
