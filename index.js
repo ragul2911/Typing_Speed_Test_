@@ -4,25 +4,27 @@ let timeLeft = 60;
 let startTime;
 let passageTimer;
 let isTyping = false;
-let correctCharacters;
+let correctCharacters = 0;
 let wpm = 0;
 let accuracy = 100;
+let highWPM = 5;
+let highAcc = 5;
 let highScore = localStorage.getItem("highScore");
 // width************************************************************
-// if (window.innerWidth > 375) {
-//     window.location.href = "../desktop/index.html";
+// if (window.innerWidth <= 375) {
+//     window.location.href = "../mobile/index.html";
 // }
 //  else {
 //     window.location.href = "index.html";
 // }
 function checkScreenWidth() {
     if (window.innerWidth <= 420) {
-        if (!window.location.pathname.endsWith("index.html")) {
-            window.location.href = "index.html";
+        if (!window.location.pathname.endsWith("mobile/index.html")) {
+            window.location.href = "mobile/index.html";
         }
     } else {
-        if (!window.location.pathname.endsWith("../index.html")) {
-            window.location.href = "../index.html";
+        if (!window.location.pathname.endsWith("index.html")) {
+            window.location.href = "index.html";
         }
     }
 }
@@ -30,22 +32,6 @@ function checkScreenWidth() {
 checkScreenWidth();
 
 window.addEventListener("resize", checkScreenWidth);
-
-//BUTTON DIFFICULTIES*************
-document.getElementById("easy-btn").addEventListener("click" , () =>{
-    showRandomParagraph("easy");
-});
-document.getElementById("medium-btn").addEventListener("click",() =>{
-     
-    showRandomParagraph("medium");
-});
-document.getElementById("hard-btn").addEventListener("click",() =>{
-    showRandomParagraph("hard");
-});
-//gives random paragraph from each category when button is clicked
-//*********************************************************
-
-
 //TIMER**************************
 document.getElementById("timed-btn").addEventListener("click", () => {
     mode = "timed";
@@ -55,17 +41,6 @@ document.getElementById("passage-btn").addEventListener("click", () => {
 });
 //********************************************************
 
-//JSON TO JS***********************************************
-let passage ={};
-// ******************************
-fetch("paragraphs.json")
-    .then(response => response.json())
-    .then(data =>{
-        passage = data;
-        console.log(passage)
-    });
-    //to convert the json file into js readable and fetch into js 
-//*********************************************************
 
 //BLURRINESS**********************************************
 const overlay = document.getElementById("overlay");
@@ -78,9 +53,22 @@ button2.addEventListener("click",()=>{
 //to make blur behind the button and disappear the button and blurriness when the button is clicked
 //*********************************************************
 
-//RANDOM PARA SELECTION************************************
 
+//JSON TO JS***********************************************
+let passage ={};
+// ******************************
+fetch("paragraphs.json")
+    .then(response => response.json())
+    .then(data =>{
+        passage = data
+    });
+    //to convert the json file into js readable and fetch into js 
+//*********************************************************
+
+
+//RANDOM PARA SELECTION************************************
 function showRandomParagraph(level) {
+
     const selectedArray = passage[level];
     const randomIndex = Math.floor(Math.random() * selectedArray.length);
     const randomParagraph = selectedArray[randomIndex];
@@ -105,29 +93,41 @@ function showRandomParagraph(level) {
 //*********************************************************
 
 
+//BUTTON DIFFICULTIES*************
+document.getElementById("easy-btn").addEventListener("click" , () =>{
+    showRandomParagraph("easy");
+});
+document.getElementById("medium-btn").addEventListener("click",() =>{
+    showRandomParagraph("medium");
+});
+document.getElementById("hard-btn").addEventListener("click",() =>{
+    showRandomParagraph("hard");
+});
+//gives random paragraph from each category when button is clicked
+//*********************************************************
 
 
 //DIFFICULTIES ACTIVE**************************************
-const level = document.querySelectorAll("input[name='difficulty']");
+const level = document.querySelectorAll(".level");
 // ******************************
-level.forEach(radio =>{
-    radio.addEventListener("change",function(){
-        level.forEach(r =>{
-            level.forEach(r => r.parentElement.classList.remove("active"));
-        });
-        this.parentElement.classList.add("active");
+level.forEach(button =>{
+    button.addEventListener("click",function(){
+        level.forEach(btn => btn.classList.remove("active"));
+        this.classList.add("active");
     });
 });
 //make any one button 
 // to stay active and another inactice while it is active
 //*********************************************************
+
+
 //MODE ACTIVE**********************************************
-const mode1 = document.querySelectorAll("input[name='mode']");
+const mode1 = document.querySelectorAll(".mode1");
 // ******************************
-mode1.forEach(radio =>{
-    radio.addEventListener("change",function(){
-        mode1.forEach(r => r.parentElement.classList.remove("active"));
-        this.parentElement.classList.add("active");
+mode1.forEach(button =>{
+    button.addEventListener("click",function(){
+        mode1.forEach(btn => btn.classList.remove("active"));
+        this.classList.add("active");
     });
     
 });
@@ -156,6 +156,8 @@ input.addEventListener("input" ,() =>{
     //CORRECT,WRONG TEXT//***************      
     letters.forEach((span,index) =>{
         const typedLetter = typed[index];
+       
+        
         if(typedLetter == null){
             span.classList.remove("correct");
             span.classList.remove("wrong");
@@ -169,8 +171,8 @@ input.addEventListener("input" ,() =>{
             span.classList.remove("correct");
             span.classList.add("wrong");
         }
-       
-    }); console.log(correctCharacters);
+        // console.log(correctCharacters);
+    });
 // ****************************************
     if(typed.length === letters.length){
 
@@ -203,20 +205,16 @@ input.addEventListener("input" ,() =>{
    
    
 }); 
-//*************************************************************/
-// ********restart***********************************************
+// /************************************************************* */
 let refresh = document.getElementById("refresh");
 refresh.addEventListener("click",() =>{
     localStorage.clear();
     window.location.href = "index.html";
 })
+
 //*********************************************************
-//**************reset************************************** */
-// function resetTest(){
-//     clearInterval(timer);
-//     clearInterval(passengerTimer);
-// }
-///LIMITED TIME//*******************************************
+  
+//LIMITED TIME//*******************************************
 
 function startCountdown(){
 
@@ -250,9 +248,13 @@ function startPassageTimer(){
    startTime = Date.now();
 
     passageTimer = setInterval(() => {
+
         const seconds = Math.floor((Date.now() - startTime) / 1000);
-        document.getElementById("time").innerText = seconds;
+
+        document.getElementById("time").innerText = seconds + " sec";
+
     }, 1000);
+   
 }
 //*********************************************************
 
@@ -294,9 +296,12 @@ function finishTest(){
             localStorage.setItem("highScore",currentScore);
             window.location.href = "highScore.html";
             console.log("Saved:", localStorage.getItem("highScore"));
+        
         }
         else{
             window.location.href = "testComplete.html";
         }
     }
+
 }
+    
