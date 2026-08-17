@@ -16,7 +16,7 @@ let highScore = localStorage.getItem("highScore");
 //     window.location.href = "index.html";
 // }
 function checkScreenWidth() {
-    if (window.innerWidth <= 412) {
+    if (window.innerWidth <= 430) {
         if (!window.location.pathname.endsWith("index.html")) {
             window.location.href = "index.html";
         }
